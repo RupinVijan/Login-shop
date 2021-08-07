@@ -1,0 +1,29 @@
+{% extends 'home.html' %}
+{% block main %}
+
+    <div class="box">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Sno</th>
+            <th scope="col">Name</th>
+            <th scope="col">Password</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        {% for det in dets %}
+            
+        <tbody>
+            <tr>
+                <th scope="row">{{det.sno}}</th>
+                <td>{{det.username}}</td>
+                <td>{{det.password}}</td>
+                <td><a href="/delete/{{det.sno}}"><button >Delete</button></a></td>
+            </tr>
+            {% endfor %}
+
+            <a href="/logout"><button class="btn">logout</button></a>
+    </div>
+    
+{% endblock  %}
+
